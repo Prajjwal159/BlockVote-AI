@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const authRoutes = require("./routes/authRoutes");
 const electionRoutes = require("./routes/electionRoutes");
+const voteRoutes = require("./routes/voteRoutes");
 
 const connectDB = require("./config/db");
 
@@ -17,10 +18,12 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/elections", electionRoutes);
+app.use("/api/votes", voteRoutes);
 
 app.get("/", (req, res) => {
     res.send("BlockVote AI Backend Running");
 });
+
 
 const PORT = process.env.PORT || 5000;
 
