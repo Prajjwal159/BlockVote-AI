@@ -1,18 +1,16 @@
-import hre from "hardhat";
-
 async function main() {
 
-    const VotingSystem = await hre.ethers.getContractFactory(
+    const VotingSystem = await ethers.getContractFactory(
         "VotingSystem"
     );
 
     const votingSystem = await VotingSystem.deploy();
 
-    await votingSystem.waitForDeployment();
+    await votingSystem.deployed();
 
     console.log(
         "Voting Contract Deployed To:",
-        await votingSystem.getAddress()
+        votingSystem.address
     );
 }
 
