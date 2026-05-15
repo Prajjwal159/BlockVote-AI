@@ -1,8 +1,8 @@
-import hre from "hardhat";
+import { ethers } from "hardhat";
 
 async function main() {
 
-    const VotingSystem = await hre.ethers.getContractFactory(
+    const VotingSystem = await ethers.getContractFactory(
         "VotingSystem"
     );
 
