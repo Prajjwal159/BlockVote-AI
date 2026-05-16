@@ -1,4 +1,53 @@
+import { useState } from "react";
+
+import API from "../services/api";
+
+
+
 function Login() {
+
+  const [email, setEmail] = useState("");
+
+  const [password, setPassword] = useState("");
+
+
+
+  const handleLogin = async () => {
+
+    try {
+
+      const response = await API.post(
+        "/auth/login",
+        {
+          email,
+          password
+        }
+      );
+
+
+
+      localStorage.setItem(
+        "token",
+        response.data.token
+      );
+
+
+
+      window.location.href = "/dashboard";
+
+      console.log(response.data);
+
+    }
+
+    catch(error) {
+
+      console.log(error);
+
+      alert("Login Failed");
+    }
+  };
+
+
 
   return (
 
@@ -29,9 +78,18 @@ function Login() {
           BlockVote AI
         </h1>
 
+
+
         <input
           type="email"
           placeholder="Email"
+
+          value={email}
+
+          onChange={(e)=>
+            setEmail(e.target.value)
+          }
+
           style={{
             width:"100%",
             padding:"12px",
@@ -41,9 +99,18 @@ function Login() {
           }}
         />
 
+
+
         <input
           type="password"
           placeholder="Password"
+
+          value={password}
+
+          onChange={(e)=>
+            setPassword(e.target.value)
+          }
+
           style={{
             width:"100%",
             padding:"12px",
@@ -53,7 +120,12 @@ function Login() {
           }}
         />
 
+
+
         <button
+
+          onClick={handleLogin}
+
           style={{
             width:"100%",
             padding:"12px",
