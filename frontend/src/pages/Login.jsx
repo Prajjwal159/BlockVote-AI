@@ -1,0 +1,76 @@
+function Login() {
+
+  return (
+
+    <div
+      style={{
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        height:"100vh"
+      }}
+    >
+
+      <div
+        style={{
+          background:"#111827",
+          padding:"40px",
+          borderRadius:"12px",
+          width:"350px"
+        }}
+      >
+
+        <h1
+          style={{
+            textAlign:"center",
+            marginBottom:"20px"
+          }}
+        >
+          BlockVote AI
+        </h1>
+
+        <input
+          type="email"
+          placeholder="Email"
+          style={{
+            width:"100%",
+            padding:"12px",
+            marginBottom:"15px",
+            border:"none",
+            borderRadius:"8px"
+          }}
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          style={{
+            width:"100%",
+            padding:"12px",
+            marginBottom:"20px",
+            border:"none",
+            borderRadius:"8px"
+          }}
+        />
+
+        <button
+          style={{
+            width:"100%",
+            padding:"12px",
+            background:"#2563eb",
+            border:"none",
+            borderRadius:"8px",
+            color:"white",
+            fontWeight:"bold"
+          }}
+        >
+          Login
+        </button>
+
+      </div>
+
+    </div>
+  );
+}
+
+export default Login;
