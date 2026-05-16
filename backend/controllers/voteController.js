@@ -1,6 +1,7 @@
 const Vote = require("../models/Vote");
 
 const Election = require("../models/Election");
+const contract = require("../blockchain/blockchain");
 
 
 
@@ -79,6 +80,11 @@ exports.castVote = async (req, res) => {
             election: electionId,
             candidateIndex
         });
+
+        await contract.castVote(
+            1,
+            candidateIndex
+        );
 
         // Increase candidate vote count
         election.candidates[candidateIndex].votes += 1;
