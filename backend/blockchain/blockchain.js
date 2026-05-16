@@ -13,7 +13,7 @@ const provider = new ethers.JsonRpcProvider(
 
 // Paste first private key here
 const privateKey =
-"PASTE_PRIVATE_KEY_HERE";
+"0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
 
 
 
@@ -27,7 +27,7 @@ const wallet = new ethers.Wallet(
 
 // Paste deployed contract address here
 const contractAddress =
-"PASTE_CONTRACT_ADDRESS_HERE";
+"0xe7f1725e7734ce288f8367e1bb143e90bb3f0512";
 
 
 
